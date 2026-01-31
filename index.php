@@ -55,7 +55,7 @@
             </div>
 
             <div class="md:hidden">
-                <button id="menubtn" class="text-gray-600 dark:text-gray-200">¤</button>
+                <button id="menubtn" class="text-gray-600 dark:text-gray-200">☰</button>
             </div>
        </div>
 
