@@ -1,3 +1,23 @@
+<?php
+
+/* Tombola d'ongle */
+// Dossier contenant les images
+$dossier = "onglem/";
+$allFiles = glob($dossier . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+if ($allFiles === false) $allFiles = [];
+
+shuffle($allFiles);
+$selectedImages = array_slice($allFiles, 0, 6);
+
+// Compléter avec un placeholder inline si nécessaire
+while (count($selectedImages) < 6) {
+    $selectedImages[] = 'data:image/svg+xml;utf8,' . rawurlencode(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect fill="#f8f0f4" width="100%" height="100%"/><text x="50%" y="50%" font-family="Verdana" font-size="28" fill="#ad1457" text-anchor="middle" alignment-baseline="central">Aucune image</text></svg>'
+    );
+}
+
+$jsonImages = json_encode($selectedImages);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,6 +40,8 @@
         }
     </script>
     <style>
+      /* Cases agrandies et responsive */
+      .cases-grid { gap: 1.25rem; }
       .case {
         position: relative;
         overflow: hidden;
@@ -27,9 +49,19 @@
         border: 2px solid #AD1457;
         background: #fff;
         cursor: pointer;
+        height: 340px;            /* taille par défaut - grande */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* plus grandes sur grand écran */
+      @media(min-width: 1024px) {
+        .case { height: 420px; } /* écran large */
       }
       .case img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;       /* remplissage sans déformation */
         display: block;
       }
       .overlay {
@@ -40,72 +72,29 @@
         opacity: 1;
         z-index: 2;
       }
-      .case.revealed .overlay {
-        opacity: 0;
-      }
+      .case.revealed .overlay { opacity: 0; pointer-events: none; }
     </style>
 </head>
 <body class="bg-lightPink dark:bg-darkBg text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300 min-h-screen">
-    <!-- Header -->
-    <header class="bg-white dark:bg-roseDark/20 backdrop-blur shadow-sm transition-colors">
-       <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-roseAccent dark:bg-roseDark text-white rounded-full flex items-center justify-center text-xl font-bold">
-                    <img src="image/Affiche .jpg" alt="Logo Care of Cerena" class="rounded-full w-12 h-12 object-cover">
-                </div>
-                <div>
-                    <h1 class="text-lg font-semibold">Care of Cerena </h1>
-                    <p class="text-sm text-gray-500 dark:text-gray-300">Soins de visage ¤ Onglerie ¤ Maquillage</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="index.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
-                <a href="soins.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
-                <a href="ongle.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
-                <a href="maquillage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
-                <a href="massage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
-                <a href="foulard.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
-                <a href="contact.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
-            </nav>
+    <?php include 'Haut.php'; ?>
 
-            <!-- Bouton mode clair/sombre
-            <button id="themeToggle" class="ml-4 text-roseAccent dark:text-roseAccent text-2xl">🌓</button>-->
-
-            <div class="md:hidden">
-                <button id="menubtn" class="text-gray-600 dark:text-gray-200 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">☰</path>
-                    </svg>
-                </button>
-            </div>
-       </div>
-
-       <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-white dark:bg-darkBg">
-            <a href="index.php" class="block py-2">Services</a>
-            <a href="soins.php" class="block py-2">Soins</a>
-            <a href="ongle.php" class="block py-2">Onglerie</a>
-            <a href="maquillage.php" class="block py-2">Makeup</a>
-            <a href="massage.php" class="block py-2">Massage</a>
-            <a href="foulard.php" class="block py-2">Nouage de foulard</a>
-            <a href="galerie.php" class="block py-2">Galerie</a>
-            <a href="contact.php" class="block py-2">Contact</a>
-       </div>
-    </header>
     <section class="max-w-6xl mx-auto px-4 py-12">
         <h2 class="text-3xl font-bold mb-6 text-roseDark dark:text-roseAccent">Modèle de PO au hasard</h2>
         <p class="text-gray-700 dark:text-gray-300 mb-8">
-            Bienvenue à la tombola d’ongles ! Grattez les cases pour révéler le modèle d’ongles que le destin a choisi pour vous. Bonne chance !
-            Glissez le curseur pour révéler votre modèle d'ongle  🎉💅
+            Glissez le curseur pour révéler votre modèle d'ongle 🎉💅
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-            <!-- 6 cases à gratter -->
-            <div class="case shadow-lg"><img src="image/1.jpg" alt="Modèle 1"><div class="overlay"></div></div>
-            <div class="case shadow-lg"><img src="image/2.jpg" alt="Modèle 2"><div class="overlay"></div></div>
-            <div class="case shadow-lg"><img src="image/3.jpg" alt="Modèle 3"><div class="overlay"></div></div>
-            <div class="case shadow-lg"><img src="image/4.jpg" alt="Modèle 4"><div class="overlay"></div></div>
-            <div class="case shadow-lg"><img src="image/5.jpg" alt="Modèle 5"><div class="overlay"></div></div>
-            <div class="case shadow-lg"><img src="image/6.jpg" alt="Modèle 6"><div class="overlay"></div></div>
+
+        <!-- grille : 1 colonne mobile, 2 tablette, 3 desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 cases-grid mb-8" id="casesGrid">
+            <?php foreach ($selectedImages as $i => $img): ?>
+                <div class="case" data-index="<?= $i+1 ?>">
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="modèle <?= $i+1 ?>"
+                         onerror="this.src='data:image/svg+xml;utf8,<?= rawurlencode('<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;><rect fill=&quot;#f8f0f4&quot; width=&quot;100%&quot; height=&quot;100%&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Verdana&quot; font-size=&quot;28&quot; fill=&quot;#ad1457&quot; text-anchor=&quot;middle&quot; alignment-baseline=&quot;central&quot;>Aucune image</text></svg>') ?>">
+                    <div class="overlay"></div>
+                </div>
+            <?php endforeach; ?>
         </div>
+
         <div class="flex flex-col md:flex-row items-center gap-4 mb-6">
             <div class="w-full md:w-1/2">
                 <label for="scratchSlider" class="block mb-2 font-medium text-roseDark dark:text-roseAccent">🧤 Glisse pour gratter :</label>
@@ -114,89 +103,74 @@
             <div class="w-full md:w-1/3">
                 <label for="caseNumber" class="block mb-2 font-medium text-roseDark dark:text-roseAccent">Choisis un numéro (1 à 6) :</label>
                 <select id="caseNumber" class="w-full rounded-lg border-2 border-roseDark px-3 py-2 text-roseDark dark:text-roseAccent bg-white dark:bg-darkBg">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+                    <?php for ($n=1;$n<=6;$n++): ?>
+                        <option value="<?= $n ?>"><?= $n ?></option>
+                    <?php endfor; ?>
                 </select>
             </div>
         </div>
+
         <div class="flex flex-col md:flex-row gap-4 justify-center">
             <button id="revealBtn" class="bg-roseAccent hover:bg-roseDark text-white font-bold py-3 px-6 rounded-lg shadow transition">✨ Révéler la case choisie</button>
             <button id="randomBtn" class="bg-roseDark hover:bg-roseAccent text-white font-bold py-3 px-6 rounded-lg shadow transition">🎲 Choisir aléatoirement</button>
         </div>
     </section>
-    <script>
-      // Menu mobile
-      const menuBtn = document.getElementById('menubtn');
-      if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-          const menu = document.getElementById('mobileMenu');
-          menu.classList.toggle('hidden');
-        });
-      }
 
-      // Tombola JS
+    <script>
+      const imagesPuzzle = <?= $jsonImages ?>;
       const slider = document.getElementById('scratchSlider');
       const cases = document.querySelectorAll('.case');
       const revealBtn = document.getElementById('revealBtn');
       const randomBtn = document.getElementById('randomBtn');
       const caseNumber = document.getElementById('caseNumber');
 
-      // Gratter uniquement la case sélectionnée avec le slider
       slider.addEventListener('input', () => {
         const value = slider.value;
         const index = parseInt(caseNumber.value) - 1;
         cases.forEach((box, i) => {
           const overlay = box.querySelector('.overlay');
-          if (i === index) {
-            overlay.style.opacity = 1 - (value / 100);
-          } else {
-            overlay.style.opacity = 1;
-          }
+          if (!overlay) return;
+          overlay.style.opacity = (i === index) ? (1 - (value / 100)) : 1;
         });
       });
 
-      // Révéler une case choisie (bouton)
       revealBtn.addEventListener('click', () => {
         const index = parseInt(caseNumber.value) - 1;
         cases.forEach((box, i) => {
+          const ov = box.querySelector('.overlay');
           if (i === index) {
             box.classList.add('revealed');
-            box.querySelector('.overlay').style.opacity = 0;
+            if (ov) ov.style.opacity = 0;
           } else {
             box.classList.remove('revealed');
-            box.querySelector('.overlay').style.opacity = 1;
+            if (ov) ov.style.opacity = 1;
           }
         });
         slider.value = 100;
       });
 
-      // Choisir une case aléatoirement
       randomBtn.addEventListener('click', () => {
-        const randomIndex = Math.floor(Math.random() * 6);
+        const randomIndex = Math.floor(Math.random() * cases.length);
+        caseNumber.value = randomIndex + 1;
         cases.forEach((box, i) => {
+          const ov = box.querySelector('.overlay');
           if (i === randomIndex) {
             box.classList.add('revealed');
-            box.querySelector('.overlay').style.opacity = 0;
+            if (ov) ov.style.opacity = 0;
           } else {
             box.classList.remove('revealed');
-            box.querySelector('.overlay').style.opacity = 1;
+            if (ov) ov.style.opacity = 1;
           }
         });
-        caseNumber.value = randomIndex + 1;
         slider.value = 100;
-        alert(`🎉 Le hasard a choisi le modèle ${randomIndex + 1}!`);
       });
 
-      // Remettre le slider et overlays quand on change de numéro
       caseNumber.addEventListener('change', () => {
         slider.value = 0;
-        cases.forEach((box, i) => {
+        cases.forEach((box) => {
           box.classList.remove('revealed');
-          box.querySelector('.overlay').style.opacity = 1;
+          const ov = box.querySelector('.overlay');
+          if (ov) ov.style.opacity = 1;
         });
       });
     </script>
