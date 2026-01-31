@@ -26,9 +26,7 @@
        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-12 bg-roseAccent dark:bg-roseDark text-white rounded-full flex items-center justify-center text-xl font-bold">
-                    <div class="w-12 h-12 bg-roseAccent dark:bg-roseDark text-white rounded-full flex items-center justify-center text-xl font-bold">
-                        <img src="Affiche .jpg" alt="" class="rounded-full w-12 h-12 object-cover">
-                    </div>
+                    <img src="image/Affiche .jpg" alt="Logo Care of Cerena" class="rounded-full w-12 h-12 object-cover">
                 </div>
                 <div>
                     <h1 class="text-lg font-semibold">Care of Cerena </h1>
@@ -36,32 +34,36 @@
                 </div>
             </div>
             <nav class="hidden md:flex gap-6 text-sm">
-                <a href="index.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
-                <a href="soins.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
-                <a href="ongle.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
-                <a href="maquillage.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
-                <a href="massage.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
-                <a href="foulard.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
-                <a href="contact.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
+                <a href="index.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
+                <a href="soins.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
+                <a href="ongle.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
+                <a href="maquillage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
+                <a href="massage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
+                <a href="foulard.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
+                <a href="contact.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
             </nav>
 
-            <!-- Bouton mode clair/sombre 
+            <!-- Bouton mode clair/sombre
             <button id="themeToggle" class="ml-4 text-roseAccent dark:text-roseAccent text-2xl">🌓</button>-->
 
             <div class="md:hidden">
-                <button id="menubtn" class="text-gray-600 dark:text-gray-200">¤</button>
+                <button id="menubtn" class="text-gray-600 dark:text-gray-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
        </div>
 
        <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-white dark:bg-darkBg">
-            <a href="index.html" class="block py-2">Services</a>
-            <a href="soins.html" class="block py-2">Soins</a>
-            <a href="ongle.html" class="block py-2">Onglerie</a>
-            <a href="maquillage.html" class="block py-2">Makeup</a>
-            <a href="massage.html" class="block py-2">Massage</a>
-            <a href="foulard.html" class="block py-2">Nouage de foulard</a>
-            <a href="galerie.html" class="block py-2">Galerie</a>
-            <a href="contact.html" class="block py-2">Contact</a>
+            <a href="index.php" class="block py-2">Services</a>
+            <a href="soins.php" class="block py-2">Soins</a>
+            <a href="ongle.php" class="block py-2">Onglerie</a>
+            <a href="maquillage.php" class="block py-2">Makeup</a>
+            <a href="massage.php" class="block py-2">Massage</a>
+            <a href="foulard.php" class="block py-2">Nouage de foulard</a>
+            <a href="galerie.php" class="block py-2">Galerie</a>
+            <a href="contact.php" class="block py-2">Contact</a>
        </div>
     </header>
     <!-- HERO MAQUILLAGE -->
@@ -137,8 +139,8 @@
             themeToggle.addEventListener('click', () => {
                toogle.classList.toggle('dark');
                 themeToggle.textContent = toogle.classList.contains('dark')?'🌙': '☀️';
-            });  
+            });
         </script>
-    
+
 </body>
 </html>

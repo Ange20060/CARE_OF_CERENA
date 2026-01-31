@@ -57,36 +57,66 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   </script>
 </head>
 
-<body class="bg-pink-50 text-gray-800 dark:bg-pink-900 dark:text-pink-50 transition-colors duration-500">
+<body class="bg-lightPink dark:bg-darkBg text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
 
   <!-- Navbar -->
-  <header class="bg-pink-200 dark:bg-pink-800 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Care of Cerena</h1>
-      <nav class="space-x-6">
-        <a href="index.html" class="hover:text-pink-500 dark:hover:text-pink-300">Accueil</a>
-        <a href="index.html" class="hover:text-pink-500 dark:hover:text-pink-300">Services</a>
-        <a href="galerie.html" class="hover:text-pink-500 dark:hover:text-pink-300">Galerie</a>
-        <a href="ongle.html" class="hover:text-pink-500 dark:hover:text-pink-300">Tombola</a>
-        <a href="contact.php" class="hover:text-pink-500 dark:hover:text-pink-300 font-semibold underline">Contact</a>
-      </nav>
+  <header class="bg-white dark:bg-roseDark/20 backdrop-blur shadow-sm transition-colors">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-roseAccent dark:bg-roseDark text-white rounded-full flex items-center justify-center text-xl font-bold">
+                <img src="image/Affiche .jpg" alt="Logo Care of Cerena" class="rounded-full w-12 h-12 object-cover">
+            </div>
+            <div>
+                <h1 class="text-lg font-semibold">Care of Cerena </h1>
+                <p class="text-sm text-gray-500 dark:text-gray-300">Soins de visage ¤ Onglerie ¤ Maquillage</p>
+            </div>
+        </div>
+        <nav class="hidden md:flex gap-6 text-sm">
+            <a href="index.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
+            <a href="soins.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
+            <a href="ongle.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
+            <a href="maquillage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
+            <a href="massage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
+            <a href="foulard.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
+            <a href="contact.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
+        </nav>
+
+        <!-- Bouton menu mobile -->
+        <div class="md:hidden">
+            <button id="menubtn" class="text-gray-600 dark:text-gray-200 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-white dark:bg-darkBg">
+        <a href="index.php" class="block py-2">Services</a>
+        <a href="soins.php" class="block py-2">Soins</a>
+        <a href="ongle.php" class="block py-2">Onglerie</a>
+        <a href="maquillage.php" class="block py-2">Makeup</a>
+        <a href="massage.php" class="block py-2">Massage</a>
+        <a href="foulard.php" class="block py-2">Nouage de foulard</a>
+        <a href="galerie.php" class="block py-2">Galerie</a>
+        <a href="contact.php" class="block py-2">Contact</a>
     </div>
   </header>
 
   <!-- Section Hero -->
-  <section class="text-center py-12 bg-gradient-to-b from-pink-100 to-white dark:from-pink-800 dark:to-pink-900">
+  <section class="text-center py-12 bg-gradient-to-b from-lightPink to-white dark:from-roseDark dark:to-darkBg">
     <h2 class="text-4xl font-bold mb-4">Contact & Réservation</h2>
     <p class="text-lg max-w-2xl mx-auto">
-      Vous souhaitez réserver un soin, une manucure, un maquillage ou un nouage de foulard ?  
+      Vous souhaitez réserver un soin, une manucure, un maquillage ou un nouage de foulard ?
       Nous sommes ravis de vous accueillir avec douceur et professionnalisme.
     </p>
   </section>
 
   <!-- Formulaire de contact -->
   <main class="max-w-5xl mx-auto p-6 grid md:grid-cols-2 gap-8">
-    
+
     <!-- Formulaire -->
-    <form class="bg-white dark:bg-pink-800 rounded-lg shadow-md p-6 space-y-4" method="POST" action="">
+    <form class="bg-white dark:bg-darkBg rounded-lg shadow-md p-6 space-y-4" method="POST" action="">
       <h3 class="text-2xl font-semibold mb-4 text-center">Envoyez-nous un message 💌</h3>
 
       <?php if($success): ?>
@@ -98,17 +128,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       <div>
         <label class="block text-sm font-medium mb-1">Nom complet</label>
-        <input name="nom" type="text" placeholder="Votre nom" class="w-full px-4 py-2 rounded-md border border-pink-300 dark:border-pink-600 bg-pink-50 dark:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input name="nom" type="text" placeholder="Votre nom" class="w-full px-4 py-2 rounded-md border border-roseAccent dark:border-roseDark bg-lightPink dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-roseAccent">
       </div>
 
       <div>
         <label class="block text-sm font-medium mb-1">Adresse e-mail</label>
-        <input name="email" type="email" placeholder="exemple@email.com" class="w-full px-4 py-2 rounded-md border border-pink-300 dark:border-pink-600 bg-pink-50 dark:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input name="email" type="email" placeholder="exemple@email.com" class="w-full px-4 py-2 rounded-md border border-roseAccent dark:border-roseDark bg-lightPink dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-roseAccent">
       </div>
 
       <div>
         <label class="block text-sm font-medium mb-1">Type de soin</label>
-        <select name="sujet" class="w-full px-4 py-2 rounded-md border border-pink-300 dark:border-pink-600 bg-pink-50 dark:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <select name="sujet" class="w-full px-4 py-2 rounded-md border border-roseAccent dark:border-roseDark bg-lightPink dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-roseAccent">
           <option value="Soins de visage">Soins du visage</option>
           <option value="Manucure">Manucure / Pédicure</option>
           <option value="Maquillage">Maquillage</option>
@@ -119,22 +149,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       <div>
         <label class="block text-sm font-medium mb-1">Message</label>
-        <textarea name="message" rows="4" placeholder="Décrivez votre besoin..." class="w-full px-4 py-2 rounded-md border border-pink-300 dark:border-pink-600 bg-pink-50 dark:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+        <textarea name="message" rows="4" placeholder="Décrivez votre besoin..." class="w-full px-4 py-2 rounded-md border border-roseAccent dark:border-roseDark bg-lightPink dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-roseAccent"></textarea>
       </div>
 
-      <button type="submit" class="w-full bg-pink-400 hover:bg-pink-500 text-white py-2 rounded-md font-medium dark:bg-pink-600 dark:hover:bg-pink-700 transition">
+      <button type="submit" class="w-full bg-roseAccent hover:bg-roseDark text-white py-2 rounded-md font-medium dark:bg-roseDark dark:hover:bg-roseAccent transition">
         Envoyer le message
       </button>
     </form>
 
     <!-- Infos & carte -->
     <div class="flex flex-col justify-center space-y-6">
-      <div class="bg-pink-100 dark:bg-pink-800 rounded-lg p-6 shadow-md space-y-3">
+      <div class="bg-lightPink dark:bg-darkBg rounded-lg p-6 shadow-md space-y-3">
         <h3 class="text-xl font-semibold mb-2">Nos coordonnées 📍</h3>
-        <p><strong>Téléphone :</strong> <a href="tel:+22966777185" class="text-pink-500 dark:text-pink-300">+229 66 77 71 85</a></p>
-        <p><strong>Email :</strong> <a href="mailto:careofcerena@gmail.com" class="text-pink-500 dark:text-pink-300">careofcerena@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+22966777185" class="text-roseAccent dark:text-roseAccent">+229 66 77 71 85</a></p>
+        <p><strong>Email :</strong> <a href="mailto:careofcerena@gmail.com" class="text-roseAccent dark:text-roseAccent">careofcerena@gmail.com</a></p>
         <p><strong>Adresse :</strong> Cotonou, Bénin</p>
-        <p><strong>WhatsApp :</strong> <a href="https://Wa.me/66777185" target="_blank" class="text-pink-500 dark:text-pink-300">Chat direct</a></p>
+        <p><strong>WhatsApp :</strong> <a href="https://Wa.me/66777185" target="_blank" class="text-roseAccent dark:text-roseAccent">Chat direct</a></p>
       </div>
 
       <div>
@@ -144,22 +174,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-pink-200 dark:bg-pink-800">
-    <p>&copy; 2025 Care of Cerena. Tous droits réservés.</p>
+  <footer class="bg-roseAccent dark:bg-roseDark text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center"></div>
+    <p>&copy; <span id="year"></span> Care of Cerena. Tous droits réservés.</p>
   </footer>
-
-  <!-- Thème -->
-  <!-- (désactivé car pas de bouton dans le HTML)
+  <!-- Scripts -->
   <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    themeToggle.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-      localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+    // Menu mobile
+    document.getElementById('menubtn')
+      .addEventListener('click', ()=>{
+      const menu=document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
     });
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  -->
 </body>
 </html>

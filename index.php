@@ -36,17 +36,23 @@
                 </div>
             </div>
             <nav class="hidden md:flex gap-6 text-sm">
-                <a href="index.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
-                <a href="soins.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
-                <a href="ongle.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
-                <a href="maquillage.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
-                <a href="massage.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
-                <a href="foulard.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
-                <a href="contact.html" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
+                <a href="index.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Services</a>
+                <a href="soins.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Soins</a>
+                <a href="ongle.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Onglerie</a>
+                <a href="maquillage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Makeup</a>
+                <a href="massage.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Massage</a>
+                <a href="foulard.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Nouage de foulard</a>
+                <a href="contact.php" class="hover:text-roseAccent dark:hover:text-roseAccent">Contact</a>
             </nav>
 
-            <!-- Bouton mode clair/sombre 
-            <button id="themeToggle" class="ml-4 text-roseAccent dark:text-roseAccent text-2xl">🌓</button>-->
+            <!-- Bouton menu mobile -->
+            <div class="md:hidden">
+                <button id="menubtn" class="text-gray-600 dark:text-gray-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
 
             <div class="md:hidden">
                 <button id="menubtn" class="text-gray-600 dark:text-gray-200">¤</button>
@@ -54,20 +60,20 @@
        </div>
 
        <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-white dark:bg-darkBg">
-            <a href="index.html" class="block py-2">Services</a>
-            <a href="soins.html" class="block py-2">Soins</a>
-            <a href="ongle.html" class="block py-2">Onglerie</a>
-            <a href="maquillage.html" class="block py-2">Makeup</a>
-            <a href="massage.html" class="block py-2">Massage</a>
-            <a href="foulard.html" class="block py-2">Nouage de foulard</a>
-            <a href="galerie.html" class="block py-2">Galerie</a>
-            <a href="contact.html" class="block py-2">Contact</a>
+            <a href="index.php" class="block py-2">Services</a>
+            <a href="soins.php" class="block py-2">Soins</a>
+            <a href="ongle.php" class="block py-2">Onglerie</a>
+            <a href="maquillage.php" class="block py-2">Makeup</a>
+            <a href="massage.php" class="block py-2">Massage</a>
+            <a href="foulard.php" class="block py-2">Nouage de foulard</a>
+            <a href="galerie.php" class="block py-2">Galerie</a>
+            <a href="contact.php" class="block py-2">Contact</a>
        </div>
     </header>
     <!-- HERO -->
      <section class="bg-gradient-to-r from-lightPink to-white dark:from-roseDark dark:to-darkBg">
         <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-8 items-center">
-            <div> 
+            <div>
                 <h2 class="text-3xl lg:text-4xl font-bold mb-4">Beauté & Détente</h2>
                 <p class="text-gray-700 dark:text-gray-300 mb-6">
                     Chez <strong>Care of Cerena</strong>, nous sublimons votre beauté naturelle avec des soins personnalisés et une attention particulière à chaque détail. Que ce soit pour un soin du visage, une manucure, un maquillage ou un massage relaxant, notre équipe dévouée est là pour vous offrir une expérience inoubliable et une relaxation unique.
@@ -113,7 +119,7 @@
                 </a>
             </div>
         </section>
-       
+
         <!-- Footer -->
         <footer class="bg-roseAccent dark:bg-roseDark text-white py-6">
             <div class="max-w-6xl mx-auto px-4 text-center"></div>
