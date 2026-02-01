@@ -11,7 +11,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!empty($nom) && !empty($email) && !empty($sujet) && !empty($message)){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             try {
-                $sql ="INSERT INTO `message` (`id`, `nom`, `email`, `sujet`, `message`, `date_envoi`)  VALUES (:nom, :email, :sujet, :message)";
+                $sql = "INSERT INTO message (nom, email, sujet, message) VALUES (:nom, :email, :sujet, :message)";
+
                 $stmt = $con_id->prepare($sql);
                 $stmt->bindParam(':nom', $nom);
                 $stmt->bindParam(':email', $email);
