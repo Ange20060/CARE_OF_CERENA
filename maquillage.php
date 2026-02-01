@@ -85,11 +85,7 @@
         </footer>
         <!-- Script pour le menu mobile et le thème sombre -->
         <script>
-            // Menu mobile
-            document.getElementById('menubtn').addEventListener('click', () => {
-                const menu = document.getElementById('mobileMenu');
-                menu.classList.toggle('hidden');
-            });
+          
             // Thème sombre
             const themeToggle = document.getElementById('themeToggle');
             const toogle = document.documentElement('themeToggle');

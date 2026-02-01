@@ -93,11 +93,7 @@
             // Année dynamique dans le footer
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Toggle menu mobile
-            document.getElementById('menuBtn').addEventListener('click', () => {
-                const menu = document.getElementById('mobileMenu');
-                menu.classList.toggle('hidden');
-            });
+            
             // Toggle thème clair/sombre
             const themeToggle = document.getElementById('themeToggle');
             const html = document.Element;

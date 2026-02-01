@@ -91,13 +91,7 @@
                 themeToggle.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
                 document.body.classList.toggle('dark');
             });
-            // Menu mobile
-            document.getElementById('menubtn')
-                .addEventListener('click', ()=>{
-                const menu=document.getElementById('mobileMenu');
-                menu.classList.toggle('hidden');
-            });
-            document.getElementById('year').textContent = new Date().getFullYear();
+ 
         </script>
 </body>
 </html>

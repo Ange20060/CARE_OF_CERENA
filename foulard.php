@@ -70,16 +70,6 @@
             <footer class="text-center bg-roseAccent dark:bg-roseDark text-white py-6 mt-12">
                 <p>&copy; 2024 Care of Cerena. Tous droits réservés.</p>
             </footer>
-    <script>
-        // Toggle menu mobile
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-        });
-        if (localStorage.getItem('theme') === 'dark'){
-            document.documentElement.classList.add('dark');
-        }
-    </script>
+  
 </body>
 </html>
