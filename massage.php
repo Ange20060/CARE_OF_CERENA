@@ -23,7 +23,7 @@
 <body class="bg-pink-50 dark:bg-pink-900 text-gray-800 dark:text-pink-50 transition-colors duration-500">
     <!-- HEADER -->
     <?php include 'Haut.php'; ?>
-    
+
     <!-- HERO -->
      <section class="relative text-center py-12 bg-gradient-to-b from-pink-100 to-white dark:from-pink-800 dark:to-pink-900">
         <h2 class="text-4xl font-bold mb-4">Massage & Détente</h2>
@@ -45,7 +45,7 @@
                 <li>Massage complet revitalisant</li>
             </ul>
             <p class="mt-4">Chaque séance est personnalisés selon vos besoin. Nos produuits naturels et gestes précis favorisent la détente, l'éclat de la peau et la circulation.</p>
-            <a href="contact.html" class="mt-6 inline-block bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-md dark:bg-pink-600 dark:hover:bg-pink-700">Prendre rendez-vous</a>
+            <a href="contact.php" class="mt-6 inline-block bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-md dark:bg-pink-600 dark:hover:bg-pink-700">Prendre rendez-vous</a>
         </div>
       </main>
       <!-- Section bienfait -->

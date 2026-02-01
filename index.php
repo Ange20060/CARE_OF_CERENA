@@ -25,7 +25,7 @@
 <body class="bg-lightPink dark:bg-darkBg text-gray-800 dark:text-gray-100 antialiased transition-colors duration-300">
     <!-- HEADER -->
     <?php include 'Haut.php'; ?>
-    
+
     <!-- HERO -->
      <section class="bg-gradient-to-r from-lightPink to-white dark:from-roseDark dark:to-darkBg">
         <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-8 items-center">
@@ -35,7 +35,7 @@
                     Chez <strong>Care of Cerena</strong>, nous sublimons votre beauté naturelle avec des soins personnalisés et une attention particulière à chaque détail. Que ce soit pour un soin du visage, une manucure, un maquillage ou un massage relaxant, notre équipe dévouée est là pour vous offrir une expérience inoubliable et une relaxation unique.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="contact.html" class="px-6 py-3 bg-roseAccent text-white rounded-md shadow">Prendre rendez-vous</a>
+                    <a href="contact.php" class="px-6 py-3 bg-roseAccent text-white rounded-md shadow">Prendre rendez-vous</a>
                     <a href="galerie.html" class="px-6 py-3 border border-roseAccent text-roseAccent rounded-md hover:bg-roseAccent hover:text-white transition">Voir nos réalisations</a>
                 </div>
             </div>

@@ -137,15 +137,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="max-w-6xl mx-auto px-4 text-center"></div>
     <p>&copy; <span id="year"></span> Care of Cerena. Tous droits réservés.</p>
   </footer>
-  <!-- Scripts -->
-  <script>
-    // Menu mobile
-    document.getElementById('menubtn')
-      .addEventListener('click', ()=>{
-      const menu=document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

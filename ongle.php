@@ -111,8 +111,9 @@ $jsonImages = json_encode($selectedImages);
         </div>
 
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <button id="revealBtn" class="bg-roseAccent hover:bg-roseDark text-white font-bold py-3 px-6 rounded-lg shadow transition">✨ Révéler la case choisie</button>
+            <button id="revealBtn" class="bg-roseDark hover:bg-roseAccent text-white font-bold py-3 px-6 rounded-lg shadow transition">✨ Révéler la case choisie</button>
             <button id="randomBtn" class="bg-roseDark hover:bg-roseAccent text-white font-bold py-3 px-6 rounded-lg shadow transition">🎲 Choisir aléatoirement</button>
+             <button onclick="window.location.reload();" class="bg-roseDark hover:bg-roseAccent text-white font-bold py-3 px-6 rounded-lg shadow transition">Actualiser pour changer les modèles</button>
         </div>
     </section>
 

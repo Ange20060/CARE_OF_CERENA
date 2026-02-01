@@ -32,7 +32,7 @@
                     Découvrez l'art du maquillage avec nos services professionnels. Que ce soit pour une occasion spéciale(mariage, soirée, photoshoot etc) ou pour sublimer votre beauté au quotidien, nous utilisons des produits de haute qualité et des techniques adaptées à votre style et à votre teint. Laissez-nous révéler la meilleure version de vous-même avec un maquillage qui met en valeur vos traits uniques.
                 </p>
                 <div class="flex gap-3">
-                    <a href="contact.html" class="px-6 py-3 bg-roseAccent text-white rounded-md shadow">Reserver votre rendez-vous</a>
+                    <a href="contact.php" class="px-6 py-3 bg-roseAccent text-white rounded-md shadow">Reserver votre rendez-vous</a>
                     <a href="#services" class="px-6 py-3 border border-roseAccent text-roseAccent rounded-md hover:text-white transition">Voir les styles</a>
                 </div>
             </div>

@@ -22,7 +22,7 @@
 
 
 
-            <div class="md:hidden">
+            <div class="md:hidden flex items-center gap-4">
                 <button id="menubtn" class="text-gray-600 dark:text-gray-200">☰</button>
             </div>
        </div>
@@ -38,3 +38,12 @@
             <a href="contact.php" class="block py-2">Contact</a>
        </div>
     </header>
+    <script>
+    // Menu mobile
+    document.getElementById('menubtn')
+      .addEventListener('click', ()=>{
+      const menu=document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>

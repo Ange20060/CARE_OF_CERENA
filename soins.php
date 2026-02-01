@@ -78,7 +78,7 @@
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-semibold mb-3 text-roseDark dark:text-roseAccent">Une expérience de purre détente et unique</h3>
                     <p class="text-gray-700 dark:text-gray-300 mb-4">Nos soins du visage sont conçus pour offrir une expérience de détente totale. Profitez d'un environnement apaisant, de massages relaxants et de produits de qualité supérieure pour revitaliser votre peau et votre esprit.</p>
-                    <a href="contact.html" class="bg-roseAccent text-white px-6 py-3 rounded-md shadow hover:bg-roseDark transition">Réservez votre soin</a>
+                    <a href="contact.php" class="bg-roseAccent text-white px-6 py-3 rounded-md shadow hover:bg-roseDark transition">Réservez votre soin</a>
                 </div>
             </div>
     </section>

@@ -48,7 +48,7 @@
             <p class="mt-4 text-gray-700 dark:text-gray-300">
                 Que ce soit pour un évènement spécial ou pour ajouter une touche de glamour à votre quotidien, nos experts en nouage de foulard sont là pour vous guider et créer des looks qui reflètent votre style unique. Que vous cherchiez à apprendre les bases du nouage de foulard ou à perfectionner vos compétences, nos formations sont conçues pour vous guider à chaque étape. Rejoignez-nous pour découvrir l'art du nouage de foulard et laissez votre style s'exprimer avec élégance et confiance.
             </p>
-            <a href="contact.html" class="mt-6 inline-block bg-roseAccent hover:bg-roseDark text-white px-5 py-2 rounded-md dark:bg-roseDark dark:hover:bg-roseAccent transition">Réservez une séance</a>
+            <a href="contact.php" class="mt-6 inline-block bg-roseAccent hover:bg-roseDark text-white px-5 py-2 rounded-md dark:bg-roseDark dark:hover:bg-roseAccent transition">Réservez une séance</a>
         </div>
        </main>
        <!-- Section galerie -->
